@@ -29,6 +29,7 @@ public class DB_Util {
             System.out.println("CONNECTION SUCCESSFUL");
         } catch (Exception e) {
             System.out.println("CONNECTION HAS FAILED " + e.getMessage() );
+            System.exit(-1);
         }
 
     }
