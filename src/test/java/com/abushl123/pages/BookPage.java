@@ -15,7 +15,7 @@ public class BookPage extends BasePage {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement search;
 
-    @FindBy(id = "book_categories")
+        @FindBy(id = "book_categories")
     public WebElement mainCategoryElement;
 
     @FindBy(name = "name")
@@ -34,6 +34,9 @@ public class BookPage extends BasePage {
 
     @FindBy(id = "description")
     public WebElement description;
+
+    @FindBy(id = "book_group_id")
+    public WebElement book_category_id;
 
 
 
