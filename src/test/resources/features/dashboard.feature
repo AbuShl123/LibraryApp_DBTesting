@@ -1,5 +1,5 @@
 Feature: Dashboard Page
-  @smoke
+  @smoke @db
   Scenario: Dashboard data verification
     Given the user logged in as "librarian"
     When user gets all information from modules

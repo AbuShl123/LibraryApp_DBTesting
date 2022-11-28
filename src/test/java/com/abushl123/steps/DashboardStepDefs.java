@@ -41,8 +41,6 @@ public class DashboardStepDefs {
 
     @Then("the information should be same with database")
     public void theInformationShouldBeSameWithDatabase() {
-        DB_Util.createConnection();
-
         DB_Util.runQuery("select count(*) from users");
         String expectedUserNumbers = DB_Util.getFirstRowFirstColumn();
         assertEquals(expectedUserNumbers, actualUserNumbers);
@@ -55,8 +53,5 @@ public class DashboardStepDefs {
                 "where is_returned=0");
         String expectedBorrowedBooksNumber = DB_Util.getFirstRowFirstColumn();
         assertEquals(expectedBorrowedBooksNumber, actualBorrowedBookNumbers);
-
-
-        DB_Util.destroy();
     }
 }
