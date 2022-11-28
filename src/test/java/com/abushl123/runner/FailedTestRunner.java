@@ -1,0 +1,15 @@
+package com.abushl123.runner;
+
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "@target/rerun.txt",
+        glue = "com/abushl123/steps"
+
+)
+public class FailedTestRunner {
+}
