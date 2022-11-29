@@ -376,15 +376,16 @@ public class BrowserUtil {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-
-
     public static List<String> getAllSelectOptions(WebElement element){
-
         Select select=new Select(element);
 
         return getElementsText(select.getOptions());
     }
 
 
+    public static void selectByValue(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByValue(value);
+    }
 
 }
