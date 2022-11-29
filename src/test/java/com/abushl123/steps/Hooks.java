@@ -16,7 +16,7 @@ public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("this is coming from BEFORE");
+        System.out.println("Setting up the scenario");
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
@@ -24,7 +24,7 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
-        System.out.println("this is coming from AFTER");
+        System.out.println("Closing the scenario");
         if(scenario.isFailed()){
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","screenshot");
@@ -35,16 +35,12 @@ public class Hooks {
     @Before("@db")
     public void setupDB(){
         DB_Util.createConnection();
-        System.out.println("connecting to database.....");
-
-
+        System.out.println("connecting to database...");
     }
 
     @After("@db")
     public void destroyDB(){
         DB_Util.destroy();
-        System.out.println("closing connection....");
-
-
+        System.out.println("closing connection...");
     }
 }
